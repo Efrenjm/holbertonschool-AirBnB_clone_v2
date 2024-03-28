@@ -135,24 +135,25 @@ class HBNBCommand(cmd.Cmd):
             storage.save()
             return
 
-        else:
-            for param in args_list[1:]:
-                if '=' not in param:
+        for param in args_list[1:]:
+            if '=' not in param:
+                continue
+            key, value = param.split('=', 1)
+
+            if value[0] == '"' and value[-1] == '"':
+                value = value[1:-1].replace('"', '\"').replace('_', ' ')
+            elif "." in value:
+                try:
+                    value = float(value)
+                except Exception:
+                    pass
+            else:
+                try:
+                    value = int(value)
+                except Exception:
                     continue
-                key, value = param.split('=', 1)
 
-                if value.startswith('"') and value.endswith('"'):
-                    value = value[1:-1].replace('_', ' ')
-                else:
-                    try:
-                        value = int(value)
-                    except ValueError:
-                        try:
-                            value = float(value)
-                        except Exception:
-                            continue
-
-                setattr(new_instance, key, value)
+            setattr(new_instance, key, value)
 
         storage.save()
         print(new_instance.id)
