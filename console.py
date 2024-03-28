@@ -128,7 +128,9 @@ class HBNBCommand(cmd.Cmd):
         params = {}
         for arg in args[1:]:
             key, val = arg.split("=")
-            val = val.replace('"','\\"').replace('_', ' ')
+            if val[0] == '"' or val[-1] == '"':
+                val = val[1:-1]
+            val = val.replace('"','\"').replace('_', ' ')
 
             if key in HBNBCommand.types.keys():
                 try:
@@ -138,7 +140,7 @@ class HBNBCommand(cmd.Cmd):
             else:
                 params[key] = val
 
-        new_instance = HBNBCommand.classes[args]()
+        new_instance = HBNBCommand.classes[args[0]](**params)
         storage.save()
         print(new_instance.id)
         storage.save()
