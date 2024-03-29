@@ -81,6 +81,54 @@
         "documentation": {}
     },
     {
+        "label": "ForeignKey",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Integer",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Float",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "relationship",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
         "label": "Column",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
@@ -106,6 +154,22 @@
     },
     {
         "label": "scoped_session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "relationship",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "relationship",
         "importPath": "sqlalchemy.orm",
         "description": "sqlalchemy.orm",
         "isExtraImport": true,
@@ -162,6 +226,14 @@
     },
     {
         "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
         "importPath": "models.base_model",
         "description": "models.base_model",
         "isExtraImport": true,
@@ -584,7 +656,7 @@
         "kind": 6,
         "importPath": "models.city",
         "description": "models.city",
-        "peekOfCode": "class City(BaseModel, Base):\n    \"\"\" The city class, contains state ID and name \"\"\"\n    __tablename__ = \"cities\"\n    name = Column(String(128), nullable=False)\n    state_id = Column(String(60), ForeignKey('states.id'), nullable=False)\n    # state = relationship('State', back_populates='cities')\n    # states = relationship(\"State\", backref=\"cities\", cascade=\"delete\")",
+        "peekOfCode": "class City(BaseModel, Base):\n    \"\"\" The city class, contains state ID and name \"\"\"\n    __tablename__ = \"cities\"\n    name = Column(String(128), nullable=False)\n    state_id = Column(String(60), ForeignKey('states.id'), nullable=False)\n    places = relationship(\"Place\", backref=\"cities\", cascade=\"delete\")",
         "detail": "models.city",
         "documentation": {}
     },
@@ -593,7 +665,7 @@
         "kind": 6,
         "importPath": "models.place",
         "description": "models.place",
-        "peekOfCode": "class Place(BaseModel):\n    \"\"\" A place to stay \"\"\"\n    city_id = \"\"\n    user_id = \"\"\n    name = \"\"\n    description = \"\"\n    number_rooms = 0\n    number_bathrooms = 0\n    max_guest = 0\n    price_by_night = 0",
+        "peekOfCode": "class Place(BaseModel, Base):\n    \"\"\" A place to stay \"\"\"\n    __tablename__ = \"places\"\n    city_id = Column(String(60), ForeignKey('cities.id'), nullable=False, )\n    user_id = Column(String(60), ForeignKey('users.id'), nullable=False, )\n    name = Column(String(128), nullable=False)\n    description = Column(String(1024), nullable=True)\n    number_rooms = Column(Integer, nullable=False, default=0)\n    number_bathrooms = Column(Integer, nullable=False, default=0)\n    max_guest = Column(Integer, nullable=False, default=0)",
         "detail": "models.place",
         "documentation": {}
     },
@@ -620,7 +692,7 @@
         "kind": 6,
         "importPath": "models.user",
         "description": "models.user",
-        "peekOfCode": "class User(BaseModel, Base):\n    \"\"\"This class defines a user by various attributes\"\"\"\n    __tablename__ = \"users\"\n    email = Column(String(128), nullable=False)\n    password = Column(String(128), nullable=False)\n    first_name = Column(String(128), nullable=True)\n    last_name = Column(String(128), nullable=True)",
+        "peekOfCode": "class User(BaseModel, Base):\n    \"\"\"This class defines a user by various attributes\"\"\"\n    __tablename__ = \"users\"\n    email = Column(String(128), nullable=False)\n    password = Column(String(128), nullable=False)\n    first_name = Column(String(128), nullable=True)\n    last_name = Column(String(128), nullable=True)\n    places = relationship(\"Place\", backref=\"user\", cascade=\"delete\")",
         "detail": "models.user",
         "documentation": {}
     },
