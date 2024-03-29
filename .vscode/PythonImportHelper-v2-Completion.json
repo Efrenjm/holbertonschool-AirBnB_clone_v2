@@ -105,14 +105,6 @@
         "documentation": {}
     },
     {
-        "label": "relationship",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
         "label": "Column",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
@@ -154,6 +146,14 @@
     },
     {
         "label": "scoped_session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "relationship",
         "importPath": "sqlalchemy.orm",
         "description": "sqlalchemy.orm",
         "isExtraImport": true,
@@ -665,7 +665,7 @@
         "kind": 6,
         "importPath": "models.place",
         "description": "models.place",
-        "peekOfCode": "class Place(BaseModel, Base):\n    \"\"\" A place to stay \"\"\"\n    __tablename__ = \"places\"\n    city_id = Column(String(60), ForeignKey('cities.id'), nullable=False, )\n    user_id = Column(String(60), ForeignKey('users.id'), nullable=False, )\n    name = Column(String(128), nullable=False)\n    description = Column(String(1024), nullable=True)\n    number_rooms = Column(Integer, nullable=False, default=0)\n    number_bathrooms = Column(Integer, nullable=False, default=0)\n    max_guest = Column(Integer, nullable=False, default=0)",
+        "peekOfCode": "class Place(BaseModel, Base):\n    \"\"\" A place to stay \"\"\"\n    __tablename__ = \"places\"\n    city_id = Column(String(60), ForeignKey('cities.id'), nullable=False)\n    user_id = Column(String(60), ForeignKey('users.id'), nullable=False)\n    name = Column(String(128), nullable=False)\n    description = Column(String(1024), nullable=True)\n    number_rooms = Column(Integer, nullable=False, default=0)\n    number_bathrooms = Column(Integer, nullable=False, default=0)\n    max_guest = Column(Integer, nullable=False, default=0)",
         "detail": "models.place",
         "documentation": {}
     },
