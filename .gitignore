@@ -1,4 +1,6 @@
 env.sh
 .vscode
-main_delete.py
 .idea
+.pytest_cache
+models/__pycache__
+main_delete.py
