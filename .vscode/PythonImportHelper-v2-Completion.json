@@ -603,7 +603,7 @@
         "kind": 6,
         "importPath": "models.state",
         "description": "models.state",
-        "peekOfCode": "class State(BaseModel, Base):\n    \"\"\" State class \"\"\"\n    if os.getenv('HBNB_TYPE_STORAGE') == 'db':\n        __tablename__ = \"states\"\n        name = Column(String(128), nullable=False)\n        cities = relationship('City', backref='states', cascade='all, delete')\n    else:\n        @property\n        def cities(self):\n            \"\"\"getter attribute to return list of City instances\"\"\"",
+        "peekOfCode": "class State(BaseModel, Base):\n    \"\"\" State class \"\"\"\n    __tablename__ = \"states\"\n    name = Column(String(128), nullable=False)\n    cities = relationship('City', backref='state', cascade='all, delete')\n    @property\n    def cities(self):\n        \"\"\"getter attribute to return list of City instances\"\"\"\n        from models import storage\n        from models.city import City",
         "detail": "models.state",
         "documentation": {}
     },
