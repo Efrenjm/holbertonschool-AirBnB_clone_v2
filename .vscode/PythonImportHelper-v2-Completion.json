@@ -81,6 +81,30 @@
         "documentation": {}
     },
     {
+        "label": "Column",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "ForeignKey",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
         "label": "sessionmaker",
         "importPath": "sqlalchemy.orm",
         "description": "sqlalchemy.orm",
@@ -178,6 +202,14 @@
     },
     {
         "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
         "importPath": "models.base_model",
         "description": "models.base_model",
         "isExtraImport": true,
@@ -596,7 +628,7 @@
         "kind": 6,
         "importPath": "models.user",
         "description": "models.user",
-        "peekOfCode": "class User(BaseModel):\n    \"\"\"This class defines a user by various attributes\"\"\"\n    email = ''\n    password = ''\n    first_name = ''\n    last_name = ''",
+        "peekOfCode": "class User(BaseModel, Base):\n    \"\"\"This class defines a user by various attributes\"\"\"\n    __tablename__ = \"users\"\n    email = Column(String(128), nullable=False)\n    password = Column(String(128), nullable=False)\n    first_name = Column(String(128), nullable=False)\n    last_name = Column(String(128), nullable=False)",
         "detail": "models.user",
         "documentation": {}
     },
