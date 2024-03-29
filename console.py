@@ -2,9 +2,8 @@
 """ Console Module """
 import cmd
 import sys
-from datetime import datetime
 from models.base_model import BaseModel
-from models.__init__ import storage
+from models import storage
 from models.user import User
 from models.place import Place
 from models.state import State
@@ -145,7 +144,7 @@ class HBNBCommand(cmd.Cmd):
                 try:
                     value = float(value)
                 except Exception:
-                    pass
+                    continue
             else:
                 try:
                     value = int(value)
@@ -241,8 +240,8 @@ class HBNBCommand(cmd.Cmd):
 
             objects = storage.all(HBNBCommand.classes[args])
             for k, v in objects.items():
-                if k.split('.')[0] == args:
-                    print_list.append(str(v))
+                #if k.split('.')[0] == args:
+                print_list.append(str(v))
         else:
             objects = storage.all()
             for k, v in objects.items():
