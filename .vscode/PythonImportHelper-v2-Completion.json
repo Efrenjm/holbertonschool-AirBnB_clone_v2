@@ -773,7 +773,7 @@
         "kind": 6,
         "importPath": "models.amenity",
         "description": "models.amenity",
-        "peekOfCode": "class Amenity(BaseModel, Base):\n    __tablename__ = \"amenities\"\n    name = Column(String(128), nullable=False)\n    place_amenities = relationship(\"Place\", secondary=\"place_amenity\", viewonly=True)",
+        "peekOfCode": "class Amenity(BaseModel, Base):\n    \"\"\" The Amenity class, contain name and place amenities table \"\"\"\n    __tablename__ = \"amenities\"\n    name = Column(String(128), nullable=False)\n    place_amenities = relationship(\"Place\", secondary=\"place_amenity\", viewonly=True)",
         "detail": "models.amenity",
         "documentation": {}
     },
@@ -818,7 +818,7 @@
         "kind": 5,
         "importPath": "models.place",
         "description": "models.place",
-        "peekOfCode": "association_table = Table(\n    \"place_amenity\", Base.metadata,\n    Column(\"place_id\", String(60), ForeignKey(\"places.id\"),\n           primary_key=True, nullable=False),\n    Column(\"amenity_id\", String(60), ForeignKey(\"amenities.id\"),\n           primary_key=True, nullable=False)\n)\nclass Place(BaseModel, Base):\n    \"\"\" A place to stay \"\"\"\n    __tablename__ = \"places\"",
+        "peekOfCode": "association_table = Table(\n    \"place_amenity\", Base.metadata,\n    Column(\"place_id\", String(60), ForeignKey(\"places.id\"), primary_key=True, nullable=False),\n    Column(\"amenity_id\", String(60), ForeignKey(\"amenities.id\"), primary_key=True, nullable=False)\n)\nclass Place(BaseModel, Base):\n    \"\"\" A place to stay \"\"\"\n    __tablename__ = \"places\"\n    city_id = Column(String(60), ForeignKey('cities.id'), nullable=False)\n    user_id = Column(String(60), ForeignKey('users.id'), nullable=False)",
         "detail": "models.place",
         "documentation": {}
     },
