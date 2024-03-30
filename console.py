@@ -1,7 +1,9 @@
+#!/Users/efrenjimenez/Cursos/Holberton/holbieEnv/bin/python
 #!/usr/bin/python3
 """ Console Module """
 import cmd
 import sys
+import os
 from models.base_model import BaseModel
 from models import storage
 from models.user import User
@@ -33,7 +35,7 @@ class HBNBCommand(cmd.Cmd):
     def preloop(self):
         """Prints if isatty is false"""
         if not sys.__stdin__.isatty():
-            print('(hbnb)', end=' ')
+            print('(hbnb)')
 
     def precmd(self, line):
         """Reformat command line for advanced command syntax.
@@ -115,6 +117,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, args):
         """ Create an object of any class"""
+
         if not args:
             print("** class name missing **")
             return
@@ -124,9 +127,9 @@ class HBNBCommand(cmd.Cmd):
         if class_name not in HBNBCommand.classes:
             print("** class doesn't exist **")
             return
-
+        
         new_instance = HBNBCommand.classes[class_name]()
-
+       
         if len(args_list) == 1:
             storage.save()
             print(new_instance.id)

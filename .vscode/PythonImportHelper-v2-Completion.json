@@ -789,7 +789,7 @@
         "kind": 6,
         "importPath": "models.amenity",
         "description": "models.amenity",
-        "peekOfCode": "class Amenity(BaseModel, Base):\n    \"\"\" The Amenity class, contain name and place amenities table \"\"\"\n    __tablename__ = \"amenities\"\n    name = Column(String(128), nullable=False)\n    place_amenities = relationship(\"Place\", secondary=\"place_amenity\", backref=\"amenities\")",
+        "peekOfCode": "class Amenity(BaseModel, Base):\n    \"\"\" The Amenity class, contain name and place amenities table \"\"\"\n    __tablename__ = \"amenities\"\n    name = Column(String(128), nullable=False)\n    place_amenities = relationship(\"Place\", secondary=\"place_amenity\")",
         "detail": "models.amenity",
         "documentation": {}
     },
