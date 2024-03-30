@@ -13,4 +13,4 @@ class Amenity(BaseModel, Base):
     """ The Amenity class, contain name and place amenities table """
     __tablename__ = "amenities"
     name = Column(String(128), nullable=False)
-    place_amenities = relationship("Place", secondary="place_amenity", viewonly=True)
+    place_amenities = relationship("Place", secondary="place_amenity", backref="amenities")
