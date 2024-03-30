@@ -26,9 +26,13 @@ class BaseModel:
             for key, val in kwargs.items():
                 if key != "__class__":
                     kwargs[key] = val
-            kwargs['updated_at'] = datetime.strptime(kwargs['updated_at'],
+            if self.created_at is None:
+                self.created_at = str(datetime.now().strftime('%Y-%m-%dT%H:%M:%S.%f'))
+            if self.updated_at is None:
+                self.updated_at = str(datetime.now().strftime('%Y-%m-%dT%H:%M:%S.%f'))
+            self.updated_at = datetime.strptime(self.updated_at,
                                                      '%Y-%m-%dT%H:%M:%S.%f')
-            kwargs['created_at'] = datetime.strptime(kwargs['created_at'],
+            self.created_at = datetime.strptime(self.created_at,
                                                      '%Y-%m-%dT%H:%M:%S.%f')
             if not hasattr(kwargs, 'id'):
                 kwargs['id'] = str(uuid.uuid4())

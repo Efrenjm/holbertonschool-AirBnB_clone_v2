@@ -377,6 +377,22 @@
         "documentation": {}
     },
     {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "State",
+        "importPath": "models.state",
+        "description": "models.state",
+        "isExtraImport": true,
+        "detail": "models.state",
+        "documentation": {}
+    },
+    {
         "label": "State",
         "importPath": "models.state",
         "description": "models.state",
@@ -433,6 +449,22 @@
         "documentation": {}
     },
     {
+        "label": "City",
+        "importPath": "models.city",
+        "description": "models.city",
+        "isExtraImport": true,
+        "detail": "models.city",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "models.user",
+        "description": "models.user",
+        "isExtraImport": true,
+        "detail": "models.user",
+        "documentation": {}
+    },
+    {
         "label": "User",
         "importPath": "models.user",
         "description": "models.user",
@@ -481,11 +513,11 @@
         "documentation": {}
     },
     {
-        "label": "Review",
-        "importPath": "models.review",
-        "description": "models.review",
+        "label": "Place",
+        "importPath": "models.place",
+        "description": "models.place",
         "isExtraImport": true,
-        "detail": "models.review",
+        "detail": "models.place",
         "documentation": {}
     },
     {
@@ -510,6 +542,30 @@
         "description": "models.review",
         "isExtraImport": true,
         "detail": "models.review",
+        "documentation": {}
+    },
+    {
+        "label": "Review",
+        "importPath": "models.review",
+        "description": "models.review",
+        "isExtraImport": true,
+        "detail": "models.review",
+        "documentation": {}
+    },
+    {
+        "label": "Review",
+        "importPath": "models.review",
+        "description": "models.review",
+        "isExtraImport": true,
+        "detail": "models.review",
+        "documentation": {}
+    },
+    {
+        "label": "Amenity",
+        "importPath": "models.amenity",
+        "description": "models.amenity",
+        "isExtraImport": true,
+        "detail": "models.amenity",
         "documentation": {}
     },
     {
@@ -594,6 +650,14 @@
         "importPath": "unittest",
         "description": "unittest",
         "detail": "unittest",
+        "documentation": {}
+    },
+    {
+        "label": "storage",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
         "documentation": {}
     },
     {
@@ -945,6 +1009,78 @@
         "description": "main_delete",
         "peekOfCode": "all_states = fs.all(State)\nprint(\"All States: {}\".format(len(all_states.keys())))\nfor state_key in all_states.keys():\n    print(all_states[state_key])",
         "detail": "main_delete",
+        "documentation": {}
+    },
+    {
+        "label": "state",
+        "kind": 5,
+        "importPath": "main_place_amenities",
+        "description": "main_place_amenities",
+        "peekOfCode": "state = State(name=\"California\")\nstate.save()\n# creation of a City\ncity = City(state_id=state.id, name=\"San Francisco\")\ncity.save()\n# creation of a User\nuser = User(email=\"john@snow.com\", password=\"johnpwd\")\nuser.save()\n# creation of 2 Places\nplace_1 = Place(user_id=user.id, city_id=city.id, name=\"House 1\")",
+        "detail": "main_place_amenities",
+        "documentation": {}
+    },
+    {
+        "label": "city",
+        "kind": 5,
+        "importPath": "main_place_amenities",
+        "description": "main_place_amenities",
+        "peekOfCode": "city = City(state_id=state.id, name=\"San Francisco\")\ncity.save()\n# creation of a User\nuser = User(email=\"john@snow.com\", password=\"johnpwd\")\nuser.save()\n# creation of 2 Places\nplace_1 = Place(user_id=user.id, city_id=city.id, name=\"House 1\")\nplace_1.save()\nplace_2 = Place(user_id=user.id, city_id=city.id, name=\"House 2\")\nplace_2.save()",
+        "detail": "main_place_amenities",
+        "documentation": {}
+    },
+    {
+        "label": "user",
+        "kind": 5,
+        "importPath": "main_place_amenities",
+        "description": "main_place_amenities",
+        "peekOfCode": "user = User(email=\"john@snow.com\", password=\"johnpwd\")\nuser.save()\n# creation of 2 Places\nplace_1 = Place(user_id=user.id, city_id=city.id, name=\"House 1\")\nplace_1.save()\nplace_2 = Place(user_id=user.id, city_id=city.id, name=\"House 2\")\nplace_2.save()\n# creation of 3 various Amenity\namenity_1 = Amenity(name=\"Wifi\")\namenity_1.save()",
+        "detail": "main_place_amenities",
+        "documentation": {}
+    },
+    {
+        "label": "place_1",
+        "kind": 5,
+        "importPath": "main_place_amenities",
+        "description": "main_place_amenities",
+        "peekOfCode": "place_1 = Place(user_id=user.id, city_id=city.id, name=\"House 1\")\nplace_1.save()\nplace_2 = Place(user_id=user.id, city_id=city.id, name=\"House 2\")\nplace_2.save()\n# creation of 3 various Amenity\namenity_1 = Amenity(name=\"Wifi\")\namenity_1.save()\namenity_2 = Amenity(name=\"Cable\")\namenity_2.save()\namenity_3 = Amenity(name=\"Oven\")",
+        "detail": "main_place_amenities",
+        "documentation": {}
+    },
+    {
+        "label": "place_2",
+        "kind": 5,
+        "importPath": "main_place_amenities",
+        "description": "main_place_amenities",
+        "peekOfCode": "place_2 = Place(user_id=user.id, city_id=city.id, name=\"House 2\")\nplace_2.save()\n# creation of 3 various Amenity\namenity_1 = Amenity(name=\"Wifi\")\namenity_1.save()\namenity_2 = Amenity(name=\"Cable\")\namenity_2.save()\namenity_3 = Amenity(name=\"Oven\")\namenity_3.save()\n# link place_1 with 2 amenities",
+        "detail": "main_place_amenities",
+        "documentation": {}
+    },
+    {
+        "label": "amenity_1",
+        "kind": 5,
+        "importPath": "main_place_amenities",
+        "description": "main_place_amenities",
+        "peekOfCode": "amenity_1 = Amenity(name=\"Wifi\")\namenity_1.save()\namenity_2 = Amenity(name=\"Cable\")\namenity_2.save()\namenity_3 = Amenity(name=\"Oven\")\namenity_3.save()\n# link place_1 with 2 amenities\nplace_1.amenities.append(amenity_1)\nplace_1.amenities.append(amenity_2)\n# link place_2 with 3 amenities",
+        "detail": "main_place_amenities",
+        "documentation": {}
+    },
+    {
+        "label": "amenity_2",
+        "kind": 5,
+        "importPath": "main_place_amenities",
+        "description": "main_place_amenities",
+        "peekOfCode": "amenity_2 = Amenity(name=\"Cable\")\namenity_2.save()\namenity_3 = Amenity(name=\"Oven\")\namenity_3.save()\n# link place_1 with 2 amenities\nplace_1.amenities.append(amenity_1)\nplace_1.amenities.append(amenity_2)\n# link place_2 with 3 amenities\nplace_2.amenities.append(amenity_1)\nplace_2.amenities.append(amenity_2)",
+        "detail": "main_place_amenities",
+        "documentation": {}
+    },
+    {
+        "label": "amenity_3",
+        "kind": 5,
+        "importPath": "main_place_amenities",
+        "description": "main_place_amenities",
+        "peekOfCode": "amenity_3 = Amenity(name=\"Oven\")\namenity_3.save()\n# link place_1 with 2 amenities\nplace_1.amenities.append(amenity_1)\nplace_1.amenities.append(amenity_2)\n# link place_2 with 3 amenities\nplace_2.amenities.append(amenity_1)\nplace_2.amenities.append(amenity_2)\nplace_2.amenities.append(amenity_3)\nstorage.save()",
+        "detail": "main_place_amenities",
         "documentation": {}
     }
 ]
