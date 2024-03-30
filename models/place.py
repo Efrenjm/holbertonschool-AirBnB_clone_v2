@@ -8,9 +8,18 @@ from models.review import Review
 
 association_table = Table(
     "place_amenity", Base.metadata,
-    Column("place_id", String(60), ForeignKey("places.id"), primary_key=True, nullable=False),
-    Column("amenity_id", String(60), ForeignKey("amenities.id"), primary_key=True, nullable=False)
+    Column("place_id",
+           String(60),
+           ForeignKey("places.id"),
+           primary_key=True,
+           nullable=False),
+    Column("amenity_id",
+           String(60),
+           ForeignKey("amenities.id"),
+           primary_key=True,
+           nullable=False)
 )
+
 
 class Place(BaseModel, Base):
     """ A place to stay """
@@ -28,8 +37,13 @@ class Place(BaseModel, Base):
     amenity_ids = []
 
     if os.getenv('HBNB_TYPE_STORAGE') == 'db':
-        reviews = relationship("Review", backref="place", cascade="delete")
-        amenities = relationship("Amenity", secondary="place_amenity", backref="places", viewonly=False)
+        reviews = relationship("Review",
+                               backref="place",
+                               cascade="delete")
+        amenities = relationship("Amenity",
+                                 secondary="place_amenity",
+                                 backref="places",
+                                 viewonly=False)
     else:
         @property
         def reviews(self):
@@ -57,5 +71,5 @@ class Place(BaseModel, Base):
         @amenities.setter
         def amenities(self, value):
             from models.amenity import Amenity
-            if type(value) == Amenity:
+            if type(value) is Amenity:
                 self.amenity_ids.append(value.id)

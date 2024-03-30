@@ -126,9 +126,9 @@ class HBNBCommand(cmd.Cmd):
         if class_name not in HBNBCommand.classes:
             print("** class doesn't exist **")
             return
-        
+
         new_instance = HBNBCommand.classes[class_name]()
-       
+
         if len(args_list) == 1:
             storage.save()
             print(new_instance.id)
@@ -242,7 +242,6 @@ class HBNBCommand(cmd.Cmd):
 
             objects = storage.all(HBNBCommand.classes[args])
             for k, v in objects.items():
-                #if k.split('.')[0] == args:
                 print_list.append(str(v))
         else:
             objects = storage.all()
