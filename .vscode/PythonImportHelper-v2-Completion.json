@@ -401,6 +401,22 @@
         "documentation": {}
     },
     {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "State",
+        "importPath": "models.state",
+        "description": "models.state",
+        "isExtraImport": true,
+        "detail": "models.state",
+        "documentation": {}
+    },
+    {
         "label": "State",
         "importPath": "models.state",
         "description": "models.state",
@@ -473,6 +489,22 @@
         "documentation": {}
     },
     {
+        "label": "City",
+        "importPath": "models.city",
+        "description": "models.city",
+        "isExtraImport": true,
+        "detail": "models.city",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "models.user",
+        "description": "models.user",
+        "isExtraImport": true,
+        "detail": "models.user",
+        "documentation": {}
+    },
+    {
         "label": "User",
         "importPath": "models.user",
         "description": "models.user",
@@ -537,11 +569,11 @@
         "documentation": {}
     },
     {
-        "label": "Review",
-        "importPath": "models.review",
-        "description": "models.review",
+        "label": "Place",
+        "importPath": "models.place",
+        "description": "models.place",
         "isExtraImport": true,
-        "detail": "models.review",
+        "detail": "models.place",
         "documentation": {}
     },
     {
@@ -574,6 +606,30 @@
         "description": "models.review",
         "isExtraImport": true,
         "detail": "models.review",
+        "documentation": {}
+    },
+    {
+        "label": "Review",
+        "importPath": "models.review",
+        "description": "models.review",
+        "isExtraImport": true,
+        "detail": "models.review",
+        "documentation": {}
+    },
+    {
+        "label": "Review",
+        "importPath": "models.review",
+        "description": "models.review",
+        "isExtraImport": true,
+        "detail": "models.review",
+        "documentation": {}
+    },
+    {
+        "label": "Amenity",
+        "importPath": "models.amenity",
+        "description": "models.amenity",
+        "isExtraImport": true,
+        "detail": "models.amenity",
         "documentation": {}
     },
     {
@@ -741,6 +797,72 @@
         "documentation": {}
     },
     {
+        "label": "patch",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "StringIO",
+        "importPath": "io",
+        "description": "io",
+        "isExtraImport": true,
+        "detail": "io",
+        "documentation": {}
+    },
+    {
+        "label": "console",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "console",
+        "description": "console",
+        "detail": "console",
+        "documentation": {}
+    },
+    {
+        "label": "HBNBCommand",
+        "importPath": "console",
+        "description": "console",
+        "isExtraImport": true,
+        "detail": "console",
+        "documentation": {}
+    },
+    {
+        "label": "tests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tests",
+        "description": "tests",
+        "detail": "tests",
+        "documentation": {}
+    },
+    {
+        "label": "FileStorage",
+        "importPath": "models.engine.file_storage",
+        "description": "models.engine.file_storage",
+        "isExtraImport": true,
+        "detail": "models.engine.file_storage",
+        "documentation": {}
+    },
+    {
+        "label": "FileStorage",
+        "importPath": "models.engine.file_storage",
+        "description": "models.engine.file_storage",
+        "isExtraImport": true,
+        "detail": "models.engine.file_storage",
+        "documentation": {}
+    },
+    {
+        "label": "DBStorage",
+        "importPath": "models.engine.db_storage",
+        "description": "models.engine.db_storage",
+        "isExtraImport": true,
+        "detail": "models.engine.db_storage",
+        "documentation": {}
+    },
+    {
         "label": "cmd",
         "kind": 6,
         "isExtraImport": true,
@@ -756,14 +878,6 @@
         "importPath": "sys",
         "description": "sys",
         "detail": "sys",
-        "documentation": {}
-    },
-    {
-        "label": "FileStorage",
-        "importPath": "models.engine.file_storage",
-        "description": "models.engine.file_storage",
-        "isExtraImport": true,
-        "detail": "models.engine.file_storage",
         "documentation": {}
     },
     {
@@ -935,6 +1049,15 @@
         "description": "tests.test_models.test_user",
         "peekOfCode": "class test_User(test_basemodel):\n    \"\"\" \"\"\"\n    def __init__(self, *args, **kwargs):\n        \"\"\" \"\"\"\n        super().__init__(*args, **kwargs)\n        self.name = \"User\"\n        self.value = User\n    def test_first_name(self):\n        \"\"\" \"\"\"\n        new = self.value()",
         "detail": "tests.test_models.test_user",
+        "documentation": {}
+    },
+    {
+        "label": "TestConsole",
+        "kind": 6,
+        "importPath": "tests.test_console",
+        "description": "tests.test_console",
+        "peekOfCode": "class TestConsole(unittest.TestCase):\n    \"\"\" this will test the console \"\"\"\n    @classmethod\n    def setUpClass(cls):\n        \"\"\"setup for the test\"\"\"\n        cls.consol = HBNBCommand()\n    @classmethod\n    def teardown(cls):\n        \"\"\"at the end of the test this will tear it down\"\"\"\n        del cls.consol",
+        "detail": "tests.test_console",
         "documentation": {}
     },
     {
