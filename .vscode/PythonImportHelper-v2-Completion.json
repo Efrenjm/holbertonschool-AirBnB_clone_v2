@@ -121,6 +121,30 @@
         "documentation": {}
     },
     {
+        "label": "ForeignKey",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
         "label": "Column",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
@@ -249,14 +273,6 @@
         "documentation": {}
     },
     {
-        "label": "BaseModel",
-        "importPath": "models.base_model",
-        "description": "models.base_model",
-        "isExtraImport": true,
-        "detail": "models.base_model",
-        "documentation": {}
-    },
-    {
         "label": "Base",
         "importPath": "models.base_model",
         "description": "models.base_model",
@@ -289,6 +305,22 @@
         "documentation": {}
     },
     {
+        "label": "Base",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
         "label": "BaseModel",
         "importPath": "models.base_model",
         "description": "models.base_model",
@@ -406,6 +438,14 @@
         "description": "models.place",
         "isExtraImport": true,
         "detail": "models.place",
+        "documentation": {}
+    },
+    {
+        "label": "Review",
+        "importPath": "models.review",
+        "description": "models.review",
+        "isExtraImport": true,
+        "detail": "models.review",
         "documentation": {}
     },
     {
@@ -674,7 +714,7 @@
         "kind": 6,
         "importPath": "models.review",
         "description": "models.review",
-        "peekOfCode": "class Review(BaseModel):\n    \"\"\" Review classto store review information \"\"\"\n    place_id = \"\"\n    user_id = \"\"\n    text = \"\"",
+        "peekOfCode": "class Review(BaseModel, Base):\n    \"\"\" Review classto store review information \"\"\"\n    __tablename__ = \"reviews\"\n    place_id = Column(String(60), ForeignKey('places.id'), nullable=False)\n    user_id = Column(String(60), ForeignKey('users.id'), nullable=False)\n    text = Column(String(1024), nullable=False)",
         "detail": "models.review",
         "documentation": {}
     },
@@ -692,7 +732,7 @@
         "kind": 6,
         "importPath": "models.user",
         "description": "models.user",
-        "peekOfCode": "class User(BaseModel, Base):\n    \"\"\"This class defines a user by various attributes\"\"\"\n    __tablename__ = \"users\"\n    email = Column(String(128), nullable=False)\n    password = Column(String(128), nullable=False)\n    first_name = Column(String(128), nullable=True)\n    last_name = Column(String(128), nullable=True)\n    places = relationship(\"Place\", backref=\"user\", cascade=\"delete\")",
+        "peekOfCode": "class User(BaseModel, Base):\n    \"\"\"This class defines a user by various attributes\"\"\"\n    __tablename__ = \"users\"\n    email = Column(String(128), nullable=False)\n    password = Column(String(128), nullable=False)\n    first_name = Column(String(128), nullable=True)\n    last_name = Column(String(128), nullable=True)\n    places = relationship(\"Place\", backref=\"user\", cascade=\"delete\")\n    reviews = relationship(\"Review\", backref=\"user\", cascade=\"delete\")",
         "detail": "models.user",
         "documentation": {}
     },
