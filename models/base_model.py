@@ -27,9 +27,9 @@ class BaseModel:
                 if key != "__class__":
                     kwargs[key] = val
             if self.created_at is None:
-                self.created_at = str(datetime.now().strftime('%Y-%m-%dT%H:%M:%S.%f'))
+                self.created_at = datetime.now().strftime('%Y-%m-%dT%H:%M:%S.%f')
             if self.updated_at is None:
-                self.updated_at = str(datetime.now().strftime('%Y-%m-%dT%H:%M:%S.%f'))
+                self.updated_at = datetime.now().strftime('%Y-%m-%dT%H:%M:%S.%f')
             self.updated_at = datetime.strptime(self.updated_at,
                                                      '%Y-%m-%dT%H:%M:%S.%f')
             self.created_at = datetime.strptime(self.created_at,
@@ -56,11 +56,14 @@ class BaseModel:
         dictionary.update(self.__dict__)
         dictionary.update({'__class__':
                           (str(type(self)).split('.')[-1]).split('\'')[0]})
+        if isinstance(self.created_at, str):
+            self.created_at = datetime.strptime(self.created_at, '%Y-%m-%dT%H:%M:%S.%f')
+        if isinstance(self.updated_at, str):
+            self.updated_at = datetime.strptime(self.updated_at, '%Y-%m-%dT%H:%M:%S.%f')
+
         dictionary['created_at'] = self.created_at.isoformat()
         dictionary['updated_at'] = self.updated_at.isoformat()
         dictionary.pop('_sa_instance_state', None)
-        # if '_sa_instance_state' in dictionary.keys():
-        #     del dictionary['_sa_instance_state']
         return dictionary
 
     def delete(self):
