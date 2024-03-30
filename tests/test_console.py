@@ -137,12 +137,12 @@ class TestConsole(unittest.TestCase):
             self.assertEqual(
                 "** value missing **\n", f.getvalue())
 
-    def setUp(self):
-        self.db = DBStorage()
-        self.console = HBNBCommand()
+    # def setUp(self):
+    #     self.db = DBStorage()
+    #     self.console = HBNBCommand()
 
-    def tearDown(self):
-        pass
+    # def tearDown(self):
+    #     pass
 
 
 if __name__ == "__main__":
