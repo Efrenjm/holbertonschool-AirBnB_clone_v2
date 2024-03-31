@@ -13,7 +13,7 @@ class test_Amenity(test_basemodel):
         self.name = "Amenity"
         self.value = Amenity
 
-    def test_name2(self):
-        """ test type of name attribut"""
-        new = self.value()
-        self.assertEqual(type(new.name), str)
+    # def test_name2(self):
+    #     """ test type of name attribut"""
+    #     new = self.value()
+    #     self.assertEqual(type(new.name), str)

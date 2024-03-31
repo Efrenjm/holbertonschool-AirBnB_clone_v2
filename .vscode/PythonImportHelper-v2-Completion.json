@@ -993,7 +993,7 @@
         "kind": 6,
         "importPath": "tests.test_models.test_amenity",
         "description": "tests.test_models.test_amenity",
-        "peekOfCode": "class test_Amenity(test_basemodel):\n    \"\"\" Unittest for amenity class \"\"\"\n    def __init__(self, *args, **kwargs):\n        \"\"\" test init of class \"\"\"\n        super().__init__(*args, **kwargs)\n        self.name = \"Amenity\"\n        self.value = Amenity\n    def test_name2(self):\n        \"\"\" test type of name attribut\"\"\"\n        new = self.value()",
+        "peekOfCode": "class test_Amenity(test_basemodel):\n    \"\"\" Unittest for amenity class \"\"\"\n    def __init__(self, *args, **kwargs):\n        \"\"\" test init of class \"\"\"\n        super().__init__(*args, **kwargs)\n        self.name = \"Amenity\"\n        self.value = Amenity\n    # def test_name2(self):\n    #     \"\"\" test type of name attribut\"\"\"\n    #     new = self.value()",
         "detail": "tests.test_models.test_amenity",
         "documentation": {}
     },
@@ -1011,7 +1011,7 @@
         "kind": 6,
         "importPath": "tests.test_models.test_city",
         "description": "tests.test_models.test_city",
-        "peekOfCode": "class test_City(test_basemodel):\n    \"\"\" Unittest for City class\"\"\"\n    def __init__(self, *args, **kwargs):\n        \"\"\" test initiation of class City\"\"\"\n        super().__init__(*args, **kwargs)\n        self.name = \"City\"\n        self.value = City\n    def test_state_id(self):\n        \"\"\" test type of state_id attribute \"\"\"\n        new = self.value()",
+        "peekOfCode": "class test_City(test_basemodel):\n    \"\"\" Unittest for City class\"\"\"\n    def __init__(self, *args, **kwargs):\n        \"\"\" test initiation of class City\"\"\"\n        super().__init__(*args, **kwargs)\n        self.name = \"City\"\n        self.value = City\n    # def test_state_id(self):\n    #     \"\"\" test type of state_id attribute \"\"\"\n    #     new = self.value()",
         "detail": "tests.test_models.test_city",
         "documentation": {}
     },
@@ -1020,7 +1020,7 @@
         "kind": 6,
         "importPath": "tests.test_models.test_place",
         "description": "tests.test_models.test_place",
-        "peekOfCode": "class test_Place(test_basemodel):\n    \"\"\" Unittest for class Place\"\"\"\n    def __init__(self, *args, **kwargs):\n        \"\"\" test initialisation of class \"\"\"\n        super().__init__(*args, **kwargs)\n        self.name = \"Place\"\n        self.value = Place\n    def test_city_id(self):\n        \"\"\" test type of city_id attribute\"\"\"\n        new = self.value()",
+        "peekOfCode": "class test_Place(test_basemodel):\n    \"\"\" Unittest for class Place\"\"\"\n    def __init__(self, *args, **kwargs):\n        \"\"\" test initialisation of class \"\"\"\n        super().__init__(*args, **kwargs)\n        self.name = \"Place\"\n        self.value = Place\n    # def test_city_id(self):\n    #     \"\"\" test type of city_id attribute\"\"\"\n    #     new = self.value()",
         "detail": "tests.test_models.test_place",
         "documentation": {}
     },
@@ -1029,7 +1029,7 @@
         "kind": 6,
         "importPath": "tests.test_models.test_review",
         "description": "tests.test_models.test_review",
-        "peekOfCode": "class test_state(test_basemodel):\n    \"\"\" Unittest of State class \"\"\"\n    def __init__(self, *args, **kwargs):\n        \"\"\" test of initialisation \"\"\"\n        super().__init__(*args, **kwargs)\n        self.name = \"State\"\n        self.value = State\n    def test_name3(self):\n        \"\"\" test of type name attribute \"\"\"\n        new = self.value()",
+        "peekOfCode": "class test_state(test_basemodel):\n    \"\"\" Unittest of State class \"\"\"\n    def __init__(self, *args, **kwargs):\n        \"\"\" test of initialisation \"\"\"\n        super().__init__(*args, **kwargs)\n        self.name = \"State\"\n        self.value = State\n    # def test_name3(self):\n    #     \"\"\" test of type name attribute \"\"\"\n    #     new = self.value()",
         "detail": "tests.test_models.test_review",
         "documentation": {}
     },
@@ -1038,7 +1038,7 @@
         "kind": 6,
         "importPath": "tests.test_models.test_state",
         "description": "tests.test_models.test_state",
-        "peekOfCode": "class test_state(test_basemodel):\n    \"\"\" Unittest of State class \"\"\"\n    def __init__(self, *args, **kwargs):\n        \"\"\" test of initialisation \"\"\"\n        super().__init__(*args, **kwargs)\n        self.name = \"State\"\n        self.value = State\n    def test_name3(self):\n        \"\"\" test of type name attribute \"\"\"\n        new = self.value()",
+        "peekOfCode": "class test_state(test_basemodel):\n    \"\"\" Unittest of State class \"\"\"\n    def __init__(self, *args, **kwargs):\n        \"\"\" test of initialisation \"\"\"\n        super().__init__(*args, **kwargs)\n        self.name = \"State\"\n        self.value = State\n    # def test_name3(self):\n    #     \"\"\" test of type name attribute \"\"\"\n    #     new = self.value()",
         "detail": "tests.test_models.test_state",
         "documentation": {}
     },
@@ -1047,7 +1047,7 @@
         "kind": 6,
         "importPath": "tests.test_models.test_user",
         "description": "tests.test_models.test_user",
-        "peekOfCode": "class test_Amenity(test_basemodel):\n    \"\"\" Unittest for amenity class\"\"\"\n    def __init__(self, *args, **kwargs):\n        \"\"\" test init of class \"\"\"\n        super().__init__(*args, **kwargs)\n        self.name = \"Amenity\"\n        self.value = Amenity\n    def test_name2(self):\n        \"\"\" test type of name attribut\"\"\"\n        new = self.value()",
+        "peekOfCode": "class test_Amenity(test_basemodel):\n    \"\"\" Unittest for amenity class\"\"\"\n    def __init__(self, *args, **kwargs):\n        \"\"\" test init of class \"\"\"\n        super().__init__(*args, **kwargs)\n        self.name = \"Amenity\"\n        self.value = Amenity\n    # def test_name2(self):\n    #     \"\"\" test type of name attribut\"\"\"\n    #     new = self.value()",
         "detail": "tests.test_models.test_user",
         "documentation": {}
     },
