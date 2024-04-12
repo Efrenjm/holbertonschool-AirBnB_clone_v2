@@ -35,10 +35,10 @@ def show_number(n):
     return "{} is a number".format(n)
 
 
-@app.route('number_template(<int:n>)', strict_slashes=False)
+@app.route('/number_template(<int:n>)', strict_slashes=False)
 def show_template(n):
     if isinstance(n, int):
-        return render_template('5-number_template.html', number=n)
+        return render_template('5-number_template.html', title="HBNB", number=n)
     else:
         abort(404)
 
