@@ -2,7 +2,7 @@
 """
 Starts a flask web app
 """
-from flask import Flask, render_template
+from flask import Flask, render_template, abort
 
 app = Flask(__name__)
 
@@ -38,7 +38,9 @@ def show_number(n):
 @app.route('number_template(<int:n>)', strict_slashes=False)
 def show_template(n):
     if isinstance(n, int):
-        return render_template('number_template.html', number=n)
+        return render_template('5-number_template.html', number=n)
+    else:
+        abort(404)
 
 
 if __name__ == '__main__':
