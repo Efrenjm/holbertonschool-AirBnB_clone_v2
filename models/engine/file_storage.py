@@ -61,3 +61,17 @@ class FileStorage:
 
         key = f"{type(obj).__name__}.{obj.id}"
         self.__objects.pop(key, None)
+
+    def reload(self):
+        """deserializes the JSON file to __objects"""
+        try:
+            with open(self.__file_path, 'r') as f:
+                jo = json.load(f)
+            for key in jo:
+                self.__objects[key] = classes[jo[key]["__class__"]](**jo[key])
+        except Exception:
+            pass
+
+    def close(self):
+        """call reload() method for deserializing the JSON file to objects"""
+        self.reload()

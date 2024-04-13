@@ -847,6 +847,102 @@
         "documentation": {}
     },
     {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "abort",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "abort",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
         "label": "cmd",
         "kind": 6,
         "isExtraImport": true,
@@ -1042,6 +1138,330 @@
         "description": "tests.test_console",
         "peekOfCode": "class TestConsole(unittest.TestCase):\n    \"\"\" this will test the console \"\"\"\n    @classmethod\n    def setUpClass(cls):\n        \"\"\"setup for the test\"\"\"\n        cls.consol = HBNBCommand()\n    @classmethod\n    def teardown(cls):\n        \"\"\"at the end of the test this will tear it down\"\"\"\n        del cls.consol",
         "detail": "tests.test_console",
+        "documentation": {}
+    },
+    {
+        "label": "hello_hbnb",
+        "kind": 2,
+        "importPath": "web_flask.0-hello_route",
+        "description": "web_flask.0-hello_route",
+        "peekOfCode": "def hello_hbnb():\n    return \"Hello HBNB!\"\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port=5000)",
+        "detail": "web_flask.0-hello_route",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "web_flask.0-hello_route",
+        "description": "web_flask.0-hello_route",
+        "peekOfCode": "app = Flask(__name__)\n@app.route('/', strict_slashes=False)\ndef hello_hbnb():\n    return \"Hello HBNB!\"\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port=5000)",
+        "detail": "web_flask.0-hello_route",
+        "documentation": {}
+    },
+    {
+        "label": "hello_hbnb",
+        "kind": 2,
+        "importPath": "web_flask.1-hbnb_route",
+        "description": "web_flask.1-hbnb_route",
+        "peekOfCode": "def hello_hbnb():\n    return \"Hello HBNB!\"\n@app.route('/hbnb', strict_slashes=False)\ndef hbnb():\n    return \"HBNB\"\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port=5000)",
+        "detail": "web_flask.1-hbnb_route",
+        "documentation": {}
+    },
+    {
+        "label": "hbnb",
+        "kind": 2,
+        "importPath": "web_flask.1-hbnb_route",
+        "description": "web_flask.1-hbnb_route",
+        "peekOfCode": "def hbnb():\n    return \"HBNB\"\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port=5000)",
+        "detail": "web_flask.1-hbnb_route",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "web_flask.1-hbnb_route",
+        "description": "web_flask.1-hbnb_route",
+        "peekOfCode": "app = Flask(__name__)\n@app.route('/', strict_slashes=False)\ndef hello_hbnb():\n    return \"Hello HBNB!\"\n@app.route('/hbnb', strict_slashes=False)\ndef hbnb():\n    return \"HBNB\"\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port=5000)",
+        "detail": "web_flask.1-hbnb_route",
+        "documentation": {}
+    },
+    {
+        "label": "hello_hbnb",
+        "kind": 2,
+        "importPath": "web_flask.2-c_route",
+        "description": "web_flask.2-c_route",
+        "peekOfCode": "def hello_hbnb():\n    return \"Hello HBNB!\"\n@app.route('/hbnb', strict_slashes=False)\ndef hbnb():\n    return \"HBNB\"\n@app.route('/c/<text>', strict_slashes=False)\ndef show_c(text):\n    text = text.replace('_', ' ')\n    return \"C {}\".format(text)\nif __name__ == '__main__':",
+        "detail": "web_flask.2-c_route",
+        "documentation": {}
+    },
+    {
+        "label": "hbnb",
+        "kind": 2,
+        "importPath": "web_flask.2-c_route",
+        "description": "web_flask.2-c_route",
+        "peekOfCode": "def hbnb():\n    return \"HBNB\"\n@app.route('/c/<text>', strict_slashes=False)\ndef show_c(text):\n    text = text.replace('_', ' ')\n    return \"C {}\".format(text)\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port=5000)",
+        "detail": "web_flask.2-c_route",
+        "documentation": {}
+    },
+    {
+        "label": "show_c",
+        "kind": 2,
+        "importPath": "web_flask.2-c_route",
+        "description": "web_flask.2-c_route",
+        "peekOfCode": "def show_c(text):\n    text = text.replace('_', ' ')\n    return \"C {}\".format(text)\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port=5000)",
+        "detail": "web_flask.2-c_route",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "web_flask.2-c_route",
+        "description": "web_flask.2-c_route",
+        "peekOfCode": "app = Flask(__name__)\n@app.route('/', strict_slashes=False)\ndef hello_hbnb():\n    return \"Hello HBNB!\"\n@app.route('/hbnb', strict_slashes=False)\ndef hbnb():\n    return \"HBNB\"\n@app.route('/c/<text>', strict_slashes=False)\ndef show_c(text):\n    text = text.replace('_', ' ')",
+        "detail": "web_flask.2-c_route",
+        "documentation": {}
+    },
+    {
+        "label": "hello_hbnb",
+        "kind": 2,
+        "importPath": "web_flask.3-python_route",
+        "description": "web_flask.3-python_route",
+        "peekOfCode": "def hello_hbnb():\n    return \"Hello HBNB!\"\n@app.route('/hbnb', strict_slashes=False)\ndef hbnb():\n    return \"HBNB\"\n@app.route('/c/<text>', strict_slashes=False)\ndef show_c(text):\n    text = text.replace('_', ' ')\n    return \"C {}\".format(text)\n@app.route('/python/', defaults={'text': 'is cool'}, strict_slashes=False)",
+        "detail": "web_flask.3-python_route",
+        "documentation": {}
+    },
+    {
+        "label": "hbnb",
+        "kind": 2,
+        "importPath": "web_flask.3-python_route",
+        "description": "web_flask.3-python_route",
+        "peekOfCode": "def hbnb():\n    return \"HBNB\"\n@app.route('/c/<text>', strict_slashes=False)\ndef show_c(text):\n    text = text.replace('_', ' ')\n    return \"C {}\".format(text)\n@app.route('/python/', defaults={'text': 'is cool'}, strict_slashes=False)\n@app.route('/python/<text>', strict_slashes=False)\ndef show_python(text):\n    text = text.replace('_', ' ')",
+        "detail": "web_flask.3-python_route",
+        "documentation": {}
+    },
+    {
+        "label": "show_c",
+        "kind": 2,
+        "importPath": "web_flask.3-python_route",
+        "description": "web_flask.3-python_route",
+        "peekOfCode": "def show_c(text):\n    text = text.replace('_', ' ')\n    return \"C {}\".format(text)\n@app.route('/python/', defaults={'text': 'is cool'}, strict_slashes=False)\n@app.route('/python/<text>', strict_slashes=False)\ndef show_python(text):\n    text = text.replace('_', ' ')\n    return \"Python {}\".format(text)\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port=5000)",
+        "detail": "web_flask.3-python_route",
+        "documentation": {}
+    },
+    {
+        "label": "show_python",
+        "kind": 2,
+        "importPath": "web_flask.3-python_route",
+        "description": "web_flask.3-python_route",
+        "peekOfCode": "def show_python(text):\n    text = text.replace('_', ' ')\n    return \"Python {}\".format(text)\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port=5000)",
+        "detail": "web_flask.3-python_route",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "web_flask.3-python_route",
+        "description": "web_flask.3-python_route",
+        "peekOfCode": "app = Flask(__name__)\n@app.route('/', strict_slashes=False)\ndef hello_hbnb():\n    return \"Hello HBNB!\"\n@app.route('/hbnb', strict_slashes=False)\ndef hbnb():\n    return \"HBNB\"\n@app.route('/c/<text>', strict_slashes=False)\ndef show_c(text):\n    text = text.replace('_', ' ')",
+        "detail": "web_flask.3-python_route",
+        "documentation": {}
+    },
+    {
+        "label": "hello_hbnb",
+        "kind": 2,
+        "importPath": "web_flask.4-number_route",
+        "description": "web_flask.4-number_route",
+        "peekOfCode": "def hello_hbnb():\n    return \"Hello HBNB!\"\n@app.route('/hbnb', strict_slashes=False)\ndef hbnb():\n    return \"HBNB\"\n@app.route('/c/<text>', strict_slashes=False)\ndef show_c(text):\n    text = text.replace('_', ' ')\n    return \"C {}\".format(text)\n@app.route('/python/', defaults={'text': 'is cool'}, strict_slashes=False)",
+        "detail": "web_flask.4-number_route",
+        "documentation": {}
+    },
+    {
+        "label": "hbnb",
+        "kind": 2,
+        "importPath": "web_flask.4-number_route",
+        "description": "web_flask.4-number_route",
+        "peekOfCode": "def hbnb():\n    return \"HBNB\"\n@app.route('/c/<text>', strict_slashes=False)\ndef show_c(text):\n    text = text.replace('_', ' ')\n    return \"C {}\".format(text)\n@app.route('/python/', defaults={'text': 'is cool'}, strict_slashes=False)\n@app.route('/python/<text>', strict_slashes=False)\ndef show_python(text):\n    text = text.replace('_', ' ')",
+        "detail": "web_flask.4-number_route",
+        "documentation": {}
+    },
+    {
+        "label": "show_c",
+        "kind": 2,
+        "importPath": "web_flask.4-number_route",
+        "description": "web_flask.4-number_route",
+        "peekOfCode": "def show_c(text):\n    text = text.replace('_', ' ')\n    return \"C {}\".format(text)\n@app.route('/python/', defaults={'text': 'is cool'}, strict_slashes=False)\n@app.route('/python/<text>', strict_slashes=False)\ndef show_python(text):\n    text = text.replace('_', ' ')\n    return \"Python {}\".format(text)\n@app.route('/number/<int:n>', strict_slashes=False)\ndef show_number(n):",
+        "detail": "web_flask.4-number_route",
+        "documentation": {}
+    },
+    {
+        "label": "show_python",
+        "kind": 2,
+        "importPath": "web_flask.4-number_route",
+        "description": "web_flask.4-number_route",
+        "peekOfCode": "def show_python(text):\n    text = text.replace('_', ' ')\n    return \"Python {}\".format(text)\n@app.route('/number/<int:n>', strict_slashes=False)\ndef show_number(n):\n    return \"{} is a number\".format(n)\n@app.route('number_template(<int:n>)', strict_slashes=False)\ndef show_template(n):\n    if isinstance(n, int):\n        return render_template('number_template.html', number=n)",
+        "detail": "web_flask.4-number_route",
+        "documentation": {}
+    },
+    {
+        "label": "show_number",
+        "kind": 2,
+        "importPath": "web_flask.4-number_route",
+        "description": "web_flask.4-number_route",
+        "peekOfCode": "def show_number(n):\n    return \"{} is a number\".format(n)\n@app.route('number_template(<int:n>)', strict_slashes=False)\ndef show_template(n):\n    if isinstance(n, int):\n        return render_template('number_template.html', number=n)\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port=5000)",
+        "detail": "web_flask.4-number_route",
+        "documentation": {}
+    },
+    {
+        "label": "show_template",
+        "kind": 2,
+        "importPath": "web_flask.4-number_route",
+        "description": "web_flask.4-number_route",
+        "peekOfCode": "def show_template(n):\n    if isinstance(n, int):\n        return render_template('number_template.html', number=n)\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port=5000)",
+        "detail": "web_flask.4-number_route",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "web_flask.4-number_route",
+        "description": "web_flask.4-number_route",
+        "peekOfCode": "app = Flask(__name__)\n@app.route('/', strict_slashes=False)\ndef hello_hbnb():\n    return \"Hello HBNB!\"\n@app.route('/hbnb', strict_slashes=False)\ndef hbnb():\n    return \"HBNB\"\n@app.route('/c/<text>', strict_slashes=False)\ndef show_c(text):\n    text = text.replace('_', ' ')",
+        "detail": "web_flask.4-number_route",
+        "documentation": {}
+    },
+    {
+        "label": "hello_hbnb",
+        "kind": 2,
+        "importPath": "web_flask.5-number_template",
+        "description": "web_flask.5-number_template",
+        "peekOfCode": "def hello_hbnb():\n    return \"Hello HBNB!\"\n@app.route('/hbnb', strict_slashes=False)\ndef hbnb():\n    return \"HBNB\"\n@app.route('/c/<text>', strict_slashes=False)\ndef show_c(text):\n    text = text.replace('_', ' ')\n    return \"C {}\".format(text)\n@app.route('/python/', defaults={'text': 'is cool'}, strict_slashes=False)",
+        "detail": "web_flask.5-number_template",
+        "documentation": {}
+    },
+    {
+        "label": "hbnb",
+        "kind": 2,
+        "importPath": "web_flask.5-number_template",
+        "description": "web_flask.5-number_template",
+        "peekOfCode": "def hbnb():\n    return \"HBNB\"\n@app.route('/c/<text>', strict_slashes=False)\ndef show_c(text):\n    text = text.replace('_', ' ')\n    return \"C {}\".format(text)\n@app.route('/python/', defaults={'text': 'is cool'}, strict_slashes=False)\n@app.route('/python/<text>', strict_slashes=False)\ndef show_python(text):\n    text = text.replace('_', ' ')",
+        "detail": "web_flask.5-number_template",
+        "documentation": {}
+    },
+    {
+        "label": "show_c",
+        "kind": 2,
+        "importPath": "web_flask.5-number_template",
+        "description": "web_flask.5-number_template",
+        "peekOfCode": "def show_c(text):\n    text = text.replace('_', ' ')\n    return \"C {}\".format(text)\n@app.route('/python/', defaults={'text': 'is cool'}, strict_slashes=False)\n@app.route('/python/<text>', strict_slashes=False)\ndef show_python(text):\n    text = text.replace('_', ' ')\n    return \"Python {}\".format(text)\n@app.route('/number/<int:n>', strict_slashes=False)\ndef show_number(n):",
+        "detail": "web_flask.5-number_template",
+        "documentation": {}
+    },
+    {
+        "label": "show_python",
+        "kind": 2,
+        "importPath": "web_flask.5-number_template",
+        "description": "web_flask.5-number_template",
+        "peekOfCode": "def show_python(text):\n    text = text.replace('_', ' ')\n    return \"Python {}\".format(text)\n@app.route('/number/<int:n>', strict_slashes=False)\ndef show_number(n):\n    return \"{} is a number\".format(n)\n@app.route('/number_template/<int:n>', strict_slashes=False)\ndef show_template(n):\n    return render_template('5-number.html', number=n)\nif __name__ == '__main__':",
+        "detail": "web_flask.5-number_template",
+        "documentation": {}
+    },
+    {
+        "label": "show_number",
+        "kind": 2,
+        "importPath": "web_flask.5-number_template",
+        "description": "web_flask.5-number_template",
+        "peekOfCode": "def show_number(n):\n    return \"{} is a number\".format(n)\n@app.route('/number_template/<int:n>', strict_slashes=False)\ndef show_template(n):\n    return render_template('5-number.html', number=n)\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port=5000)",
+        "detail": "web_flask.5-number_template",
+        "documentation": {}
+    },
+    {
+        "label": "show_template",
+        "kind": 2,
+        "importPath": "web_flask.5-number_template",
+        "description": "web_flask.5-number_template",
+        "peekOfCode": "def show_template(n):\n    return render_template('5-number.html', number=n)\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port=5000)",
+        "detail": "web_flask.5-number_template",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "web_flask.5-number_template",
+        "description": "web_flask.5-number_template",
+        "peekOfCode": "app = Flask(__name__)\n@app.route('/', strict_slashes=False)\ndef hello_hbnb():\n    return \"Hello HBNB!\"\n@app.route('/hbnb', strict_slashes=False)\ndef hbnb():\n    return \"HBNB\"\n@app.route('/c/<text>', strict_slashes=False)\ndef show_c(text):\n    text = text.replace('_', ' ')",
+        "detail": "web_flask.5-number_template",
+        "documentation": {}
+    },
+    {
+        "label": "hello_hbnb",
+        "kind": 2,
+        "importPath": "web_flask.6-number_odd_or_even",
+        "description": "web_flask.6-number_odd_or_even",
+        "peekOfCode": "def hello_hbnb():\n    return \"Hello HBNB!\"\n@app.route('/hbnb', strict_slashes=False)\ndef hbnb():\n    return \"HBNB\"\n@app.route('/c/<text>', strict_slashes=False)\ndef show_c(text):\n    text = text.replace('_', ' ')\n    return \"C {}\".format(text)\n@app.route('/python/', defaults={'text': 'is cool'}, strict_slashes=False)",
+        "detail": "web_flask.6-number_odd_or_even",
+        "documentation": {}
+    },
+    {
+        "label": "hbnb",
+        "kind": 2,
+        "importPath": "web_flask.6-number_odd_or_even",
+        "description": "web_flask.6-number_odd_or_even",
+        "peekOfCode": "def hbnb():\n    return \"HBNB\"\n@app.route('/c/<text>', strict_slashes=False)\ndef show_c(text):\n    text = text.replace('_', ' ')\n    return \"C {}\".format(text)\n@app.route('/python/', defaults={'text': 'is cool'}, strict_slashes=False)\n@app.route('/python/<text>', strict_slashes=False)\ndef show_python(text):\n    text = text.replace('_', ' ')",
+        "detail": "web_flask.6-number_odd_or_even",
+        "documentation": {}
+    },
+    {
+        "label": "show_c",
+        "kind": 2,
+        "importPath": "web_flask.6-number_odd_or_even",
+        "description": "web_flask.6-number_odd_or_even",
+        "peekOfCode": "def show_c(text):\n    text = text.replace('_', ' ')\n    return \"C {}\".format(text)\n@app.route('/python/', defaults={'text': 'is cool'}, strict_slashes=False)\n@app.route('/python/<text>', strict_slashes=False)\ndef show_python(text):\n    text = text.replace('_', ' ')\n    return \"Python {}\".format(text)\n@app.route('/number/<int:n>', strict_slashes=False)\ndef show_number(n):",
+        "detail": "web_flask.6-number_odd_or_even",
+        "documentation": {}
+    },
+    {
+        "label": "show_python",
+        "kind": 2,
+        "importPath": "web_flask.6-number_odd_or_even",
+        "description": "web_flask.6-number_odd_or_even",
+        "peekOfCode": "def show_python(text):\n    text = text.replace('_', ' ')\n    return \"Python {}\".format(text)\n@app.route('/number/<int:n>', strict_slashes=False)\ndef show_number(n):\n    return \"{} is a number\".format(n)\n@app.route('/number_template/<int:n>', strict_slashes=False)\ndef show_template(n):\n    return render_template('5-number.html', number=n)\n@app.route('/number_odd_or_even/<int:n>', strict_slashes=False)",
+        "detail": "web_flask.6-number_odd_or_even",
+        "documentation": {}
+    },
+    {
+        "label": "show_number",
+        "kind": 2,
+        "importPath": "web_flask.6-number_odd_or_even",
+        "description": "web_flask.6-number_odd_or_even",
+        "peekOfCode": "def show_number(n):\n    return \"{} is a number\".format(n)\n@app.route('/number_template/<int:n>', strict_slashes=False)\ndef show_template(n):\n    return render_template('5-number.html', number=n)\n@app.route('/number_odd_or_even/<int:n>', strict_slashes=False)\ndef show_evenness(n):\n    if n % 2 == 0:\n        evenness = 'even'\n    else:",
+        "detail": "web_flask.6-number_odd_or_even",
+        "documentation": {}
+    },
+    {
+        "label": "show_template",
+        "kind": 2,
+        "importPath": "web_flask.6-number_odd_or_even",
+        "description": "web_flask.6-number_odd_or_even",
+        "peekOfCode": "def show_template(n):\n    return render_template('5-number.html', number=n)\n@app.route('/number_odd_or_even/<int:n>', strict_slashes=False)\ndef show_evenness(n):\n    if n % 2 == 0:\n        evenness = 'even'\n    else:\n        evenness = 'odd'\n    return render_template('6-number_odd_or_even.html',\n                           number=n, evenness=evenness)",
+        "detail": "web_flask.6-number_odd_or_even",
+        "documentation": {}
+    },
+    {
+        "label": "show_evenness",
+        "kind": 2,
+        "importPath": "web_flask.6-number_odd_or_even",
+        "description": "web_flask.6-number_odd_or_even",
+        "peekOfCode": "def show_evenness(n):\n    if n % 2 == 0:\n        evenness = 'even'\n    else:\n        evenness = 'odd'\n    return render_template('6-number_odd_or_even.html',\n                           number=n, evenness=evenness)\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port=5000)",
+        "detail": "web_flask.6-number_odd_or_even",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "web_flask.6-number_odd_or_even",
+        "description": "web_flask.6-number_odd_or_even",
+        "peekOfCode": "app = Flask(__name__)\n@app.route('/', strict_slashes=False)\ndef hello_hbnb():\n    return \"Hello HBNB!\"\n@app.route('/hbnb', strict_slashes=False)\ndef hbnb():\n    return \"HBNB\"\n@app.route('/c/<text>', strict_slashes=False)\ndef show_c(text):\n    text = text.replace('_', ' ')",
+        "detail": "web_flask.6-number_odd_or_even",
         "documentation": {}
     },
     {
