@@ -1501,7 +1501,7 @@
         "kind": 2,
         "importPath": "web_flask.7-states_list",
         "description": "web_flask.7-states_list",
-        "peekOfCode": "def states_list():\n    \"\"\"display a HTML page with the states listed in alphabetical order\"\"\"\n    states = sorted(list(storage.all(\"State\").values()), key=lambda x: x.name)\n    return render_template('7-states_list.html', states=states)\n@app.teardown_appcontext\ndef teardown_db(exception):\n    \"\"\"closes the storage on teardown\"\"\"\n    storage.close()\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port='5000')",
+        "peekOfCode": "def states_list():\n    \"\"\"display a HTML page with the states listed in alphabetical order\"\"\"\n    all_states = list(storage.all(State).values())\n    all_states.sort(key=lambda x: x.name)\n    return render_template('7-states_list.html', states=all_states)\n@app.teardown_appcontext\ndef teardown_db(exception):\n    \"\"\"closes the storage on teardown\"\"\"\n    storage.close()\nif __name__ == '__main__':",
         "detail": "web_flask.7-states_list",
         "documentation": {}
     },
@@ -1519,7 +1519,7 @@
         "kind": 5,
         "importPath": "web_flask.7-states_list",
         "description": "web_flask.7-states_list",
-        "peekOfCode": "app = Flask(__name__)\n@app.route('/states_list', strict_slashes=False)\ndef states_list():\n    \"\"\"display a HTML page with the states listed in alphabetical order\"\"\"\n    states = sorted(list(storage.all(\"State\").values()), key=lambda x: x.name)\n    return render_template('7-states_list.html', states=states)\n@app.teardown_appcontext\ndef teardown_db(exception):\n    \"\"\"closes the storage on teardown\"\"\"\n    storage.close()",
+        "peekOfCode": "app = Flask(__name__)\n@app.route('/states_list', strict_slashes=False)\ndef states_list():\n    \"\"\"display a HTML page with the states listed in alphabetical order\"\"\"\n    all_states = list(storage.all(State).values())\n    all_states.sort(key=lambda x: x.name)\n    return render_template('7-states_list.html', states=all_states)\n@app.teardown_appcontext\ndef teardown_db(exception):\n    \"\"\"closes the storage on teardown\"\"\"",
         "detail": "web_flask.7-states_list",
         "documentation": {}
     },
