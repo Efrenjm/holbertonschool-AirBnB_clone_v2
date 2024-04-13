@@ -489,6 +489,14 @@
         "documentation": {}
     },
     {
+        "label": "State",
+        "importPath": "models.state",
+        "description": "models.state",
+        "isExtraImport": true,
+        "detail": "models.state",
+        "documentation": {}
+    },
+    {
         "label": "City",
         "importPath": "models.city",
         "description": "models.city",
@@ -670,6 +678,14 @@
         "description": "models.review",
         "isExtraImport": true,
         "detail": "models.review",
+        "documentation": {}
+    },
+    {
+        "label": "Amenity",
+        "importPath": "models.amenity",
+        "description": "models.amenity",
+        "isExtraImport": true,
+        "detail": "models.amenity",
         "documentation": {}
     },
     {
@@ -786,6 +802,14 @@
         "importPath": "unittest",
         "description": "unittest",
         "detail": "unittest",
+        "documentation": {}
+    },
+    {
+        "label": "storage",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
         "documentation": {}
     },
     {
@@ -960,6 +984,22 @@
     },
     {
         "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
         "importPath": "flask",
         "description": "flask",
         "isExtraImport": true,
@@ -1344,6 +1384,33 @@
         "description": "web_flask.1-hbnb_route",
         "peekOfCode": "app = Flask(__name__)\n@app.route('/', strict_slashes=False)\ndef hello_hbnb():\n    return \"Hello HBNB!\"\n@app.route('/hbnb', strict_slashes=False)\ndef hbnb():\n    return \"HBNB\"\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port=5000)",
         "detail": "web_flask.1-hbnb_route",
+        "documentation": {}
+    },
+    {
+        "label": "hbnb_filters",
+        "kind": 2,
+        "importPath": "web_flask.10-hbnb_filters",
+        "description": "web_flask.10-hbnb_filters",
+        "peekOfCode": "def hbnb_filters():\n    '''The hbnb_filters page.'''\n    all_states = list(storage.all(State).values())\n    amenities = list(storage.all(Amenity).values())\n    all_states.sort(key=lambda x: x.name)\n    amenities.sort(key=lambda x: x.name)\n    for state in all_states:\n        state.cities.sort(key=lambda x: x.name)\n    return render_template('10-hbnb_filters.html',\n                           states=all_states, amenities=amenities)",
+        "detail": "web_flask.10-hbnb_filters",
+        "documentation": {}
+    },
+    {
+        "label": "flask_teardown",
+        "kind": 2,
+        "importPath": "web_flask.10-hbnb_filters",
+        "description": "web_flask.10-hbnb_filters",
+        "peekOfCode": "def flask_teardown(exc):\n    '''The Flask app/request context end event listener.'''\n    storage.close()\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port='5000')",
+        "detail": "web_flask.10-hbnb_filters",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "web_flask.10-hbnb_filters",
+        "description": "web_flask.10-hbnb_filters",
+        "peekOfCode": "app = Flask(__name__)\n@app.route('/hbnb_filters', strict_slashes=False)\ndef hbnb_filters():\n    '''The hbnb_filters page.'''\n    all_states = list(storage.all(State).values())\n    amenities = list(storage.all(Amenity).values())\n    all_states.sort(key=lambda x: x.name)\n    amenities.sort(key=lambda x: x.name)\n    for state in all_states:\n        state.cities.sort(key=lambda x: x.name)",
+        "detail": "web_flask.10-hbnb_filters",
         "documentation": {}
     },
     {
