@@ -43,7 +43,7 @@ class DBStorage:
         objs = {}
 
         if cls is None:
-            classes = [BaseModel, State, City, User, Place, Review, Amenity]  # Add the new classes here
+            classes = [BaseModel, State, City, User, Place, Review, Amenity]
         else:
             classes = [cls]
 
