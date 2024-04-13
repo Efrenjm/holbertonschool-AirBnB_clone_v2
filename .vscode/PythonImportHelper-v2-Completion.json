@@ -717,6 +717,22 @@
         "documentation": {}
     },
     {
+        "label": "*",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "storage",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
         "label": "storage",
         "importPath": "models",
         "description": "models",
@@ -936,6 +952,22 @@
     },
     {
         "label": "abort",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
         "importPath": "flask",
         "description": "flask",
         "isExtraImport": true,
@@ -1462,6 +1494,33 @@
         "description": "web_flask.6-number_odd_or_even",
         "peekOfCode": "app = Flask(__name__)\n@app.route('/', strict_slashes=False)\ndef hello_hbnb():\n    return \"Hello HBNB!\"\n@app.route('/hbnb', strict_slashes=False)\ndef hbnb():\n    return \"HBNB\"\n@app.route('/c/<text>', strict_slashes=False)\ndef show_c(text):\n    text = text.replace('_', ' ')",
         "detail": "web_flask.6-number_odd_or_even",
+        "documentation": {}
+    },
+    {
+        "label": "states_list",
+        "kind": 2,
+        "importPath": "web_flask.7-states_list",
+        "description": "web_flask.7-states_list",
+        "peekOfCode": "def states_list():\n    \"\"\"display a HTML page with the states listed in alphabetical order\"\"\"\n    states = sorted(list(storage.all(\"State\").values()), key=lambda x: x.name)\n    return render_template('7-states_list.html', states=states)\n@app.teardown_appcontext\ndef teardown_db(exception):\n    \"\"\"closes the storage on teardown\"\"\"\n    storage.close()\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port='5000')",
+        "detail": "web_flask.7-states_list",
+        "documentation": {}
+    },
+    {
+        "label": "teardown_db",
+        "kind": 2,
+        "importPath": "web_flask.7-states_list",
+        "description": "web_flask.7-states_list",
+        "peekOfCode": "def teardown_db(exception):\n    \"\"\"closes the storage on teardown\"\"\"\n    storage.close()\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port='5000')",
+        "detail": "web_flask.7-states_list",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "web_flask.7-states_list",
+        "description": "web_flask.7-states_list",
+        "peekOfCode": "app = Flask(__name__)\n@app.route('/states_list', strict_slashes=False)\ndef states_list():\n    \"\"\"display a HTML page with the states listed in alphabetical order\"\"\"\n    states = sorted(list(storage.all(\"State\").values()), key=lambda x: x.name)\n    return render_template('7-states_list.html', states=states)\n@app.teardown_appcontext\ndef teardown_db(exception):\n    \"\"\"closes the storage on teardown\"\"\"\n    storage.close()",
+        "detail": "web_flask.7-states_list",
         "documentation": {}
     },
     {
