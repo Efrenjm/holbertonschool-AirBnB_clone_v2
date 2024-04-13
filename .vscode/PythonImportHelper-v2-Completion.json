@@ -449,6 +449,14 @@
         "documentation": {}
     },
     {
+        "label": "State",
+        "importPath": "models.state",
+        "description": "models.state",
+        "isExtraImport": true,
+        "detail": "models.state",
+        "documentation": {}
+    },
+    {
         "label": "City",
         "importPath": "models.city",
         "description": "models.city",
@@ -710,14 +718,6 @@
     },
     {
         "label": "storage",
-        "importPath": "models",
-        "description": "models",
-        "isExtraImport": true,
-        "detail": "models",
-        "documentation": {}
-    },
-    {
-        "label": "*",
         "importPath": "models",
         "description": "models",
         "isExtraImport": true,
