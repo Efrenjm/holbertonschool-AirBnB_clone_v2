@@ -473,6 +473,14 @@
         "documentation": {}
     },
     {
+        "label": "State",
+        "importPath": "models.state",
+        "description": "models.state",
+        "isExtraImport": true,
+        "detail": "models.state",
+        "documentation": {}
+    },
+    {
         "label": "City",
         "importPath": "models.city",
         "description": "models.city",
@@ -805,6 +813,14 @@
         "documentation": {}
     },
     {
+        "label": "storage",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
         "label": "test_basemodel",
         "importPath": "tests.test_models.test_base_model",
         "description": "tests.test_models.test_base_model",
@@ -1008,6 +1024,22 @@
     },
     {
         "label": "abort",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
         "importPath": "flask",
         "description": "flask",
         "isExtraImport": true,
@@ -1586,6 +1618,33 @@
         "description": "web_flask.7-states_list",
         "peekOfCode": "app = Flask(__name__)\n@app.route('/states_list', strict_slashes=False)\ndef states_list():\n    \"\"\"display a HTML page with the states listed in alphabetical order\"\"\"\n    all_states = list(storage.all(State).values())\n    all_states.sort(key=lambda x: x.name)\n    return render_template('7-states_list.html', states=all_states)\n@app.teardown_appcontext\ndef teardown_db(exception):\n    \"\"\"closes the storage on teardown\"\"\"",
         "detail": "web_flask.7-states_list",
+        "documentation": {}
+    },
+    {
+        "label": "cities_by_states",
+        "kind": 2,
+        "importPath": "web_flask.8-cities_by_states",
+        "description": "web_flask.8-cities_by_states",
+        "peekOfCode": "def cities_by_states():\n    '''The cities_by_states page.'''\n    all_states = list(storage.all(State).values())\n    all_states.sort(key=lambda x: x.name)\n    for state in all_states:\n        state.cities.sort(key=lambda x: x.name)\n    return render_template('8-cities_by_states.html', states=all_states)\n@app.teardown_appcontext\ndef flask_teardown(exc):\n    '''The Flask app/request context end event listener.'''",
+        "detail": "web_flask.8-cities_by_states",
+        "documentation": {}
+    },
+    {
+        "label": "flask_teardown",
+        "kind": 2,
+        "importPath": "web_flask.8-cities_by_states",
+        "description": "web_flask.8-cities_by_states",
+        "peekOfCode": "def flask_teardown(exc):\n    '''The Flask app/request context end event listener.'''\n    storage.close()\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port='5000')",
+        "detail": "web_flask.8-cities_by_states",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "web_flask.8-cities_by_states",
+        "description": "web_flask.8-cities_by_states",
+        "peekOfCode": "app = Flask(__name__)\n@app.route('/cities_by_states', strict_slashes=False)\ndef cities_by_states():\n    '''The cities_by_states page.'''\n    all_states = list(storage.all(State).values())\n    all_states.sort(key=lambda x: x.name)\n    for state in all_states:\n        state.cities.sort(key=lambda x: x.name)\n    return render_template('8-cities_by_states.html', states=all_states)\n@app.teardown_appcontext",
+        "detail": "web_flask.8-cities_by_states",
         "documentation": {}
     },
     {
