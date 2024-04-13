@@ -265,14 +265,6 @@
         "documentation": {}
     },
     {
-        "label": "Base",
-        "importPath": "models.base_model",
-        "description": "models.base_model",
-        "isExtraImport": true,
-        "detail": "models.base_model",
-        "documentation": {}
-    },
-    {
         "label": "BaseModel",
         "importPath": "models.base_model",
         "description": "models.base_model",
@@ -361,7 +353,7 @@
         "documentation": {}
     },
     {
-        "label": "BaseModel",
+        "label": "Base",
         "importPath": "models.base_model",
         "description": "models.base_model",
         "isExtraImport": true,
@@ -393,11 +385,19 @@
         "documentation": {}
     },
     {
-        "label": "State",
-        "importPath": "models.state",
-        "description": "models.state",
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
         "isExtraImport": true,
-        "detail": "models.state",
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
         "documentation": {}
     },
     {
@@ -454,6 +454,30 @@
         "description": "models.state",
         "isExtraImport": true,
         "detail": "models.state",
+        "documentation": {}
+    },
+    {
+        "label": "State",
+        "importPath": "models.state",
+        "description": "models.state",
+        "isExtraImport": true,
+        "detail": "models.state",
+        "documentation": {}
+    },
+    {
+        "label": "State",
+        "importPath": "models.state",
+        "description": "models.state",
+        "isExtraImport": true,
+        "detail": "models.state",
+        "documentation": {}
+    },
+    {
+        "label": "City",
+        "importPath": "models.city",
+        "description": "models.city",
+        "isExtraImport": true,
+        "detail": "models.city",
         "documentation": {}
     },
     {
@@ -529,6 +553,22 @@
         "documentation": {}
     },
     {
+        "label": "User",
+        "importPath": "models.user",
+        "description": "models.user",
+        "isExtraImport": true,
+        "detail": "models.user",
+        "documentation": {}
+    },
+    {
+        "label": "Place",
+        "importPath": "models.place",
+        "description": "models.place",
+        "isExtraImport": true,
+        "detail": "models.place",
+        "documentation": {}
+    },
+    {
         "label": "Place",
         "importPath": "models.place",
         "description": "models.place",
@@ -606,6 +646,22 @@
         "description": "models.review",
         "isExtraImport": true,
         "detail": "models.review",
+        "documentation": {}
+    },
+    {
+        "label": "Review",
+        "importPath": "models.review",
+        "description": "models.review",
+        "isExtraImport": true,
+        "detail": "models.review",
+        "documentation": {}
+    },
+    {
+        "label": "Amenity",
+        "importPath": "models.amenity",
+        "description": "models.amenity",
+        "isExtraImport": true,
+        "detail": "models.amenity",
         "documentation": {}
     },
     {
@@ -1007,6 +1063,15 @@
         "importPath": "models.engine.file_storage",
         "description": "models.engine.file_storage",
         "peekOfCode": "class FileStorage:\n    \"\"\"This class manages storage of hbnb models in JSON format\"\"\"\n    __file_path = 'file.json'\n    __objects = {}\n    def all(self, cls=None):\n        \"\"\"Returns a dictionary of models currently in storage\"\"\"\n        if cls is None:\n            return FileStorage.__objects\n        response = {key: val for key, val in FileStorage.__objects.items()\n                    if isinstance(val, cls)}",
+        "detail": "models.engine.file_storage",
+        "documentation": {}
+    },
+    {
+        "label": "classes",
+        "kind": 5,
+        "importPath": "models.engine.file_storage",
+        "description": "models.engine.file_storage",
+        "peekOfCode": "classes = {\"Amenity\": Amenity, \"BaseModel\": BaseModel, \"City\": City,\n           \"Place\": Place, \"Review\": Review, \"State\": State, \"User\": User}\nclass FileStorage:\n    \"\"\"This class manages storage of hbnb models in JSON format\"\"\"\n    __file_path = 'file.json'\n    __objects = {}\n    def all(self, cls=None):\n        \"\"\"Returns a dictionary of models currently in storage\"\"\"\n        if cls is None:\n            return FileStorage.__objects",
         "detail": "models.engine.file_storage",
         "documentation": {}
     },
