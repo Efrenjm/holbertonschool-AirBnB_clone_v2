@@ -1,37 +1,29 @@
-#!/Users/efrenjimenez/Cursos/Holberton/holbieEnv/bin/python
 #!/usr/bin/python3
-"""
-A simple Flask web application.
-"""
+"""Start a Flask web application"""
+from models import storage
+from models.state import State
+from models.amenity import Amenity
 from flask import Flask, render_template
 
-from models import storage
-from models.amenity import Amenity
-from models.state import State
 
-
-app = Flask(__name__)
-
-
-@app.route('/hbnb_filters', strict_slashes=False)
-def hbnb_filters():
-    '''The hbnb_filters page.'''
-    all_states = list(storage.all(State).values())
-    amenities = list(storage.all(Amenity).values())
-    all_states.sort(key=lambda x: x.name)
-    amenities.sort(key=lambda x: x.name)
-    for state in all_states:
-        state.cities.sort(key=lambda x: x.name)
-
-    return render_template('10-hbnb_filters.html',
-                           states=all_states, amenities=amenities)
+app = Flask(__name__, template_folder='./templates')
 
 
 @app.teardown_appcontext
-def flask_teardown(exc):
-    '''The Flask app/request context end event listener.'''
+def remove_current_session(exception):
+    """Close the SQLAlchemy session"""
     storage.close()
 
 
+@app.route('/hbnb_filters', strict_slashes=False)
+def load_filters():
+    """Load State, City and Amenity filters if found"""
+    states = sorted(storage.all(State).values(), key=lambda x: x.name)
+    amenities = sorted(storage.all(Amenity).values(), key=lambda z: z.name)
+    for state in states:
+        cities = sorted(state.cities, key=lambda y: y.name)
+    return render_template('10-hbnb_filters.html', states=states, amenities=amenities)
+
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port='5000')
+    app.run(host='0.0.0.0', port=5000, debug=False)

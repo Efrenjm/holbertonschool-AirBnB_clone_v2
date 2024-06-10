@@ -1,17 +1,15 @@
-#!/Users/efrenjimenez/Cursos/Holberton/holbieEnv/bin/python
 #!/usr/bin/python3
 """ Console Module """
 import cmd
 import sys
-import os
-from models.base_model import BaseModel
-from models import storage
 from models.user import User
+from models.city import City
 from models.place import Place
 from models.state import State
-from models.city import City
-from models.amenity import Amenity
 from models.review import Review
+from models.amenity import Amenity
+from models.__init__ import storage
+from models.base_model import BaseModel
 
 
 class HBNBCommand(cmd.Cmd):
@@ -117,48 +115,34 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, args):
         """ Create an object of any class"""
-
         if not args:
             print("** class name missing **")
             return
-
-        args_list = args.split()
-        class_name = args_list[0]
-        if class_name not in HBNBCommand.classes:
+        list_cmd = args.split()
+        cls_name = list_cmd[0]
+        if cls_name not in HBNBCommand.classes:
             print("** class doesn't exist **")
             return
-
-        new_instance = HBNBCommand.classes[class_name]()
-
-        if len(args_list) == 1:
-            storage.save()
-            print(new_instance.id)
-            storage.save()
-            return
-
-        for param in args_list[1:]:
-            if '=' not in param:
-                continue
-            key, value = param.split('=', 1)
-
-            if value[0] == '"' and value[-1] == '"':
-                value = value[1:-1].replace('"', '\"').replace('_', ' ')
-            elif "." in value:
-                try:
-                    value = float(value)
-                except Exception:
-                    continue
-            else:
-                try:
-                    value = int(value)
-                except Exception:
-                    continue
-
-            setattr(new_instance, key, value)
-
-        storage.save()
+        new_dict = {}
+        for i in range(1, len(list_cmd)):
+            split_cmd = list_cmd[i].split('=')
+            key = split_cmd[0]
+            value = split_cmd[1]
+            try:
+                if value.startswith('"') and value.endswith('"'):
+                    value = value.replace('"', '')
+                    new_dict[key] = value.replace('_', ' ')
+                else:
+                    if '.' in value:
+                        new_dict[key] = float(value)
+                    else:
+                        new_dict[key] = int(value)
+            except IndexError:
+                pass
+        new_instance = HBNBCommand.classes[cls_name]()
+        new_instance.__dict__.update(new_dict)
+        new_instance.save()
         print(new_instance.id)
-        storage.save()
 
     def help_create(self):
         """ Help information for the create method """
@@ -221,7 +205,7 @@ class HBNBCommand(cmd.Cmd):
         key = c_name + "." + c_id
 
         try:
-            del storage.all()[key]
+            del (storage.all()[key])
             storage.save()
         except KeyError:
             print("** no instance found **")
@@ -240,15 +224,12 @@ class HBNBCommand(cmd.Cmd):
             if args not in HBNBCommand.classes:
                 print("** class doesn't exist **")
                 return
-
-            objects = storage.all(HBNBCommand.classes[args])
-            for k, v in objects.items():
-                print_list.append(str(v))
+            for k, v in storage.all(HBNBCommand.classes[args]).items():
+                if k.split('.')[0] == args:
+                    print_list.append(str(v))
         else:
-            objects = storage.all()
-            for k, v in objects.items():
+            for k, v in storage.all().items():
                 print_list.append(str(v))
-
         print(print_list)
 
     def help_all(self):

@@ -1,24 +1,39 @@
 #!/usr/bin/python3
-""" Unittest for class City """
-from tests.test_models.test_base_model import test_basemodel
+""" Unittests for City class"""
+import os
+import MySQLdb
+import unittest
 from models.city import City
+from tests.test_models.test_base_model import test_basemodel
 
 
 class test_City(test_basemodel):
-    """ Unittest for City class"""
+    """ Test class for city"""
 
     def __init__(self, *args, **kwargs):
-        """ test initiation of class City"""
+        """ Test class instantiation """
         super().__init__(*args, **kwargs)
         self.name = "City"
         self.value = City
 
-    # def test_state_id(self):
-    #     """ test type of state_id attribute """
-    #     new = self.value()
-    #     self.assertEqual(type(new.state_id), str)
+    def setUp(self):
+        """ Test set up """
+        pass
 
-    # def test_name(self):
-    #     """ test type of name attribute """
-    #     new = self.value()
-    #     self.assertEqual(type(new.name), str)
+    def tearDown(self):
+        """Test removing json file or closing database connection"""
+        pass
+
+    def test_state_id(self):
+        """ Test state id type"""
+        new = self.value()
+        self.assertEqual(type(new.state_id), str)
+
+    def test_name(self):
+        """ Test name type """
+        new = self.value()
+        self.assertEqual(type(new.name), str)
+
+
+if __name__ == '__main__':
+    unittest.main()

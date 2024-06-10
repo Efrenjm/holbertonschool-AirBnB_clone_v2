@@ -1,13 +1,7 @@
--- Create hbnb_dev_db, hbnb_dev user and grant proper permissions
-CREATE DATABASE IF NOT EXISTS hbnb_dev_db;
-CREATE USER IF NOT EXISTS 'hbnb_dev'@'localhost' IDENTIFIED BY 'hbnb_dev_pwd';
-GRANT ALL PRIVILEGES ON hbnb_dev_db.* TO 'hbnb_dev'@'localhost';
-FLUSH PRIVILEGES;
-GRANT SELECT ON performance_schema.* TO 'hbnb_dev'@'localhost';
-FLUSH PRIVILEGES;
+-- Description: This script is used to create a test database and user for the hbnb project.
 
-
-USE hbnb_dev_db;
-SELECT * FROM users;
-DESCRIBE users;
-SHOW COLUMNS FROM users;
+CREATE DATABASE IF NOT EXISTS `hbnb_dev_db`;
+CREATE USER IF NOT EXISTS `hbnb_dev`@`localhost` IDENTIFIED BY 'hbnb_dev_pwd';
+GRANT ALL PRIVILEGES ON hbnb_dev_db.* TO `hbnb_dev`@`localhost`;
+GRANT SELECT ON performance_schema.* TO `hbnb_dev`@`localhost`;
+FLUSH PRIVILEGES;

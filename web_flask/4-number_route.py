@@ -1,14 +1,11 @@
 #!/usr/bin/python3
-"""
-Starts a flask web app
-"""
-from flask import Flask, render_template
-
+"""Start a Flask web application"""
+from flask import Flask
 app = Flask(__name__)
 
 
 @app.route('/', strict_slashes=False)
-def hello_hbnb():
+def index():
     return "Hello HBNB!"
 
 
@@ -18,28 +15,25 @@ def hbnb():
 
 
 @app.route('/c/<text>', strict_slashes=False)
-def show_c(text):
-    text = text.replace('_', ' ')
-    return "C {}".format(text)
+def c_text(text):
+    text = text.replace("_", " ")
+    return f'C {text}'
 
 
-@app.route('/python/', defaults={'text': 'is cool'}, strict_slashes=False)
+@app.route('/python', strict_slashes=False, defaults={'text': 'is_cool'})
 @app.route('/python/<text>', strict_slashes=False)
-def show_python(text):
-    text = text.replace('_', ' ')
-    return "Python {}".format(text)
+def python_text(text):
+    text = text.replace("_", " ")
+    return f'Python {text}'
 
 
 @app.route('/number/<int:n>', strict_slashes=False)
-def show_number(n):
-    return "{} is a number".format(n)
-
-
-@app.route('number_template(<int:n>)', strict_slashes=False)
-def show_template(n):
-    if isinstance(n, int):
-        return render_template('number_template.html', number=n)
+def python_number(n):
+    try:
+        return f'{n} is a number'
+    except TypeError:
+        return f'{n} must be an integer'
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000, debug=False)

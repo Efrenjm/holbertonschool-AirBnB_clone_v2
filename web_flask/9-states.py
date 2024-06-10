@@ -1,48 +1,31 @@
 #!/usr/bin/python3
-"""
-A simple Flask web application.
-"""
-from flask import Flask, render_template
-
+"""Start a Flask web application"""
 from models import storage
 from models.state import State
+from flask import Flask, render_template
 
 
-app = Flask(__name__)
-'''The Flask application instance.'''
-app.url_map.strict_slashes = False
-
-
-@app.route('/states', strict_slashes=False)
-@app.route('/states/<id>', strict_slashes=False)
-def states(id=None):
-    '''The states page.'''
-    states = None
-    state = None
-    all_states = list(storage.all(State).values())
-    case = 404
-    if id is not None:
-        res = list(filter(lambda x: x.id == id, all_states))
-        if len(res) > 0:
-            state = res[0]
-            state.cities.sort(key=lambda x: x.name)
-            case = 2
-    else:
-        states = all_states
-        for state in states:
-            state.cities.sort(key=lambda x: x.name)
-        states.sort(key=lambda x: x.name)
-        case = 1
-
-    return render_template('9-states.html',
-                           states=states, state=state, case=case)
+app = Flask(__name__, template_folder='./templates')
 
 
 @app.teardown_appcontext
-def flask_teardown(exc):
-    '''The Flask app/request context end event listener.'''
+def teardown(exception):
+    """Close the SQLAlchemy session"""
     storage.close()
 
 
+@app.route('/states', defaults={'id': None}, strict_slashes=False)
+@app.route('/states/<id>', strict_slashes=False)
+def states_id_found(id):
+    """Get the list of cities related to the state id"""
+    states = storage.all(State).values()
+    for state in states:
+        if state.id == id:
+            return render_template('9-states.html', state=state, id=id)
+    if id is None:
+        return render_template('9-states.html', states=states, id=id)
+    return render_template('9-states.html')
+
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port='5000')
+    app.run(host='0.0.0.0', port=5000, debug=False)
